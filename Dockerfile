@@ -1,7 +1,10 @@
-FROM python:3.8.10
+FROM python:3.9
 
-RUN pip freeze > requirements.txt
+WORKDIR /app
 
-RUN pip3 install -r requirements.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
-RUN python app.py
+COPY . .
+
+CMD ["python", "app.py"]

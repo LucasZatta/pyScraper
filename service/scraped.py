@@ -18,7 +18,7 @@ def get_url_info(url):
     
 
 
-    if doc is not None and (date - dateutil.parser.isoparse(doc['created_at'])).total_seconds()/60 < 30:
+    if doc is not None and (date - dateutil.parser.isoparse(doc['created_at'])).total_seconds()/3600 < 1:
         doc = json.loads(json_util.dumps(doc))
         del doc["_id"]
         del doc['created_at']

@@ -1,10 +1,3 @@
-# import pymongo  # package for working with MongoDB
-# client = pymongo.MongoClient("mongodb://localhost:27017/")
-# db = client["customersdb"]
-# customers = db["test"]
-
-# print(customers.name)
-
 from flask import Flask
 from api.routes import scrape_route
 
@@ -13,5 +6,5 @@ app.register_blueprint(scrape_route)
 
 
 if __name__ == "__main__":
-    app.run(port=3300)
+    app.run(port=5000, host='0.0.0.0')
 
